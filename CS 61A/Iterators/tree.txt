@@ -1,0 +1,43 @@
+Trees: 
+
+#Constructor
+
+def tree(label, branches=[]):
+	for b in branches:
+		assert is_tree(branch)
+	return [label] + list(b)
+
+
+#Selectors
+
+def label(tree):
+	return tree[0]
+
+def branches(tree)
+	return tree[1:]
+
+def is_leaf(tree):
+	return not branches(tree)
+
+
+Each Mint instance has a year stamp: 
+The update method sets the year 
+stamp to the current_year 
+class attribute of the Mint class:
+The create method takes a subclass of Coin:
+ and returns an instance of that class stamped:
+ with the mint's year (which may be different 
+from Mint.current_year if it has 
+not been updated.)
+A Coin's worth method returns the cents value 
+of the coin plus one extra cent for each 
+			year of age beyond 50:
+A coin's age can be determined by subtracting
+ the coin's year from the current_year 
+		class attribute of the Mint class:
+
+
+
+
+
+A Coin's worth method returns the cents value of the coin plus one extra cent for each year of age beyond 50. A coin's age can be determined by subtracting the coin's year from the current_year class attribute of the Mint class.

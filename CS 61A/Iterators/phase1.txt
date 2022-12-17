@@ -1,0 +1,774 @@
+At each "? ", type what you would expect the output to be.
+Type exit() to quit
+
+---------------------------------------------------------------------
+Problem 0 > Suite 1 > Case 1
+(cases remaining: 9)
+
+Q: What is the significance of an Insect's health attribute? Does this
+value change? If so, how?
+Choose the number of the correct choice:
+0) It represents the strength of an insect against attacks, which
+   doesn't change throughout the game
+1) It represents the amount of health the insect has left, so the
+   insect is eliminated when it reaches 0
+2) It represents health protecting the insect, so the insect can only
+   be damaged when its health reaches 0
+? 2
+-- Not quite. Try again! --
+
+Choose the number of the correct choice:
+0) It represents the strength of an insect against attacks, which
+   doesn't change throughout the game
+1) It represents the amount of health the insect has left, so the
+   insect is eliminated when it reaches 0
+2) It represents health protecting the insect, so the insect can only
+   be damaged when its health reaches 0
+? 1
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 0 > Suite 1 > Case 2
+(cases remaining: 8)
+
+Q: Which of the following is a class attribute of the Insect class?
+Choose the number of the correct choice:
+0) place
+1) bees
+2) health
+3) damage
+? 0
+-- Not quite. Try again! --
+
+Choose the number of the correct choice:
+0) place
+1) bees
+2) health
+3) damage
+? 2
+-- Not quite. Try again! --
+
+Choose the number of the correct choice:
+0) place
+1) bees
+2) health
+3) damage
+? 3
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 0 > Suite 1 > Case 3
+(cases remaining: 7)
+
+Q: Is the health attribute of the Ant class an instance attribute or class attribute? Why?
+Choose the number of the correct choice:
+0) class, Ants of the same subclass all have the same amount of starting health
+1) instance, each Ant starts out with a different amount of health
+2) class, when one Ant gets damaged, all ants receive the same amount of damage
+3) instance, each Ant instance needs its own health value
+? 0
+-- Not quite. Try again! --
+
+Choose the number of the correct choice:
+0) class, Ants of the same subclass all have the same amount of starting health
+1) instance, each Ant starts out with a different amount of health
+2) class, when one Ant gets damaged, all ants receive the same amount of damage
+3) instance, each Ant instance needs its own health value
+? 3
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 0 > Suite 1 > Case 4
+(cases remaining: 6)
+
+Q: Is the damage attribute of an Ant subclass (such as ThrowerAnt) an
+instance or class attribute? Why?
+Choose the number of the correct choice:
+0) instance, the damage an Ant depends on where the Ant is
+1) class, all Ants deal the same damage
+2) instance, each Ant does damage to bees at different rates
+3) class, all Ants of the same subclass deal the same damage
+? 0
+-- Not quite. Try again! --
+
+Choose the number of the correct choice:
+0) instance, the damage an Ant depends on where the Ant is
+1) class, all Ants deal the same damage
+2) instance, each Ant does damage to bees at different rates
+3) class, all Ants of the same subclass deal the same damage
+? 3
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 0 > Suite 1 > Case 5
+(cases remaining: 5)
+
+Q: Which class do both Ant and Bee inherit from?
+Choose the number of the correct choice:
+0) Bee
+1) Ant
+2) Insect
+3) Place
+? 2
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 0 > Suite 1 > Case 6
+(cases remaining: 4)
+
+Q: What do instances of Ant and instances of Bee have in common? Please choose the most correct answer.
+Choose the number of the correct choice:
+0) Ants and Bees both have the attributes health, damage, and place
+   and the methods reduce_health and action
+1) Ants and Bees both take the same action each turn
+2) Ants and Bees have nothing in common
+3) Ants and Bees both have the attribute damage and the methods
+   reduce_health and action
+? 3
+-- Not quite. Try again! --
+
+Choose the number of the correct choice:
+0) Ants and Bees both have the attributes health, damage, and place
+   and the methods reduce_health and action
+1) Ants and Bees both take the same action each turn
+2) Ants and Bees have nothing in common
+3) Ants and Bees both have the attribute damage and the methods
+   reduce_health and action
+? 1
+-- Not quite. Try again! --
+
+Choose the number of the correct choice:
+0) Ants and Bees both have the attributes health, damage, and place
+   and the methods reduce_health and action
+1) Ants and Bees both take the same action each turn
+2) Ants and Bees have nothing in common
+3) Ants and Bees both have the attribute damage and the methods
+   reduce_health and action
+? 0
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 0 > Suite 1 > Case 7
+(cases remaining: 3)
+
+Q: How many insects can be in a single Place at any given time in the
+game (before Problem 8)?
+Choose the number of the correct choice:
+0) Only one insect can be in a single Place at a time
+1) There is no limit on the number of insects of any type in a single Place
+2) There can be one Ant and many Bees in a single Place
+3) There can be one Bee and many Ants in a single Place
+? 2
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 0 > Suite 1 > Case 8
+(cases remaining: 2)
+
+Q: What does a Bee do during one of its turns?
+Choose the number of the correct choice:
+0) The bee stings the ant in its place and then moves to the next place
+1) The bee flies to the nearest Ant and attacks it
+2) The bee moves to the next place, then stings the ant in that place
+3) The bee stings the ant in its place or moves to the next place if there is no ant in its place
+? 3
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 0 > Suite 1 > Case 9
+(cases remaining: 1)
+
+Q: When is the game lost?
+Choose the number of the correct choice:
+0) When any bee reaches the end of the tunnel and the Queen Ant is killed
+1) When any bee reaches the end of the tunnel or when the Queen Ant is killed
+2) When the bees enter the colony
+3) When no ants are left on the map
+4) When the colony runs out of food
+? 1
+-- OK! --
+
+---------------------------------------------------------------------
+OK! All cases for Problem 0 unlocked.
+
+ERROR  | auth.py:102 | {'error': 'invalid_grant'}
+Performing authentication
+Please enter your school email (.edu): bsidiq@berkeley.edu
+Successfully logged in as bsidiq@berkeley.edu
+Backup... 100% complete
+Backup successful for user: bsidiq@berkeley.edu
+
+OK is up to date
+Fred@DESKTOP-1FTM5JI ~/OneDrive/Desktop/ants$ python ok -q 01 -u
+=====================================================================
+Assignment: Project 3: Ants Vs. SomeBees
+OK, version v1.18.1
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unlocking tests
+
+At each "? ", type what you would expect the output to be.
+Type exit() to quit
+
+---------------------------------------------------------------------
+Problem 1 > Suite 1 > Case 1
+(cases remaining: 5)
+
+Q: What is the purpose of the food_cost attribute?
+Choose the number of the correct choice:
+0) Each turn, each Ant in the colony eats food_cost food from the
+   colony's total available food
+1) Each turn, each Ant in the colony adds food_cost food to the
+   colony's total available food
+2) Placing an ant into the colony will decrease the colony's total
+   available food by that ant's food_cost
+? 2
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 1 > Suite 1 > Case 2
+(cases remaining: 4)
+
+Q: What type of attribute is food_cost?
+Choose the number of the correct choice:
+0) instance, the food_cost of an Ant depends on the location it is placed
+1) instance, the food_cost of an Ant is randomized upon initialization
+2) class, all Ants cost the same to place no matter what type of Ant it is
+3) class, all Ants of the same subclass cost the same to place
+? 0
+-- Not quite. Try again! --
+
+Choose the number of the correct choice:
+0) instance, the food_cost of an Ant depends on the location it is placed
+1) instance, the food_cost of an Ant is randomized upon initialization
+2) class, all Ants cost the same to place no matter what type of Ant it is
+3) class, all Ants of the same subclass cost the same to place
+? 2
+-- Not quite. Try again! --
+
+Choose the number of the correct choice:
+0) instance, the food_cost of an Ant depends on the location it is placed
+1) instance, the food_cost of an Ant is randomized upon initialization
+2) class, all Ants cost the same to place no matter what type of Ant it is
+3) class, all Ants of the same subclass cost the same to place
+? 3
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 1 > Suite 2 > Case 1
+(cases remaining: 3)
+
+>>> from ants import *
+>>> from ants_plans import *
+>>> Ant.food_cost
+? 0
+-- OK! --
+
+>>> HarvesterAnt.food_cost
+? 0
+-- Not quite. Try again! --
+
+? 0
+-- Not quite. Try again! --
+
+? 2
+-- OK! --
+
+>>> ThrowerAnt.food_cost
+? 3
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 1 > Suite 2 > Case 2
+(cases remaining: 2)
+
+>>> from ants import *
+>>> from ants_plans import *
+>>> # Testing HarvesterAnt action
+>>> # Create a test layout where the colony is a single row with 9 tiles
+>>> beehive = Hive(make_test_assault_plan())
+>>> gamestate = GameState(None, beehive, ant_types(), dry_layout, (1, 9))
+>>> #
+>>> gamestate.food = 4
+>>> harvester = HarvesterAnt()
+>>> # Note that initializing an Ant here doesn't cost food, only
+>>> # deploying an Ant in the game simulation does
+>>> #
+>>> gamestate.food
+? 4
+-- OK! --
+
+>>> harvester.action(gamestate)
+>>> gamestate.food
+? 4
+-- Not quite. Try again! --
+
+? 6
+-- Not quite. Try again! --
+
+? 7
+-- Not quite. Try again! --
+
+? 3
+-- Not quite. Try again! --
+
+? 2
+-- Not quite. Try again! --
+
+? 1
+-- Not quite. Try again! --
+
+? 5
+-- OK! --
+
+>>> harvester.action(gamestate)
+>>> gamestate.food
+? 4
+-- Not quite. Try again! --
+
+? 5
+-- Not quite. Try again! --
+
+? 6
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 1 > Suite 2 > Case 3
+(cases remaining: 1)
+
+-- Already unlocked --
+
+---------------------------------------------------------------------
+OK! All cases for Problem 1 unlocked.
+
+Backup... 100% complete
+Backup successful for user: bsidiq@berkeley.edu
+
+OK is up to date
+Fred@DESKTOP-1FTM5JI ~/OneDrive/Desktop/ants$ python ok -q 02
+=====================================================================
+Assignment: Project 3: Ants Vs. SomeBees
+OK, version v1.18.1
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+
+There are still locked tests! Use the -u option to unlock them
+---------------------------------------------------------------------
+Test summary
+    Locked: 3
+    0 test cases passed! No cases failed.
+
+Backup... 100% complete
+Backup successful for user: bsidiq@berkeley.edu
+
+OK is up to date
+Fred@DESKTOP-1FTM5JI ~/OneDrive/Desktop/ants$ python ok -q 02 -u
+=====================================================================
+Assignment: Project 3: Ants Vs. SomeBees
+OK, version v1.18.1
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unlocking tests
+
+At each "? ", type what you would expect the output to be.
+Type exit() to quit
+
+---------------------------------------------------------------------
+Problem 2 > Suite 1 > Case 1
+(cases remaining: 5)
+
+Q: What does a Place represent in the game?
+Choose the number of the correct choice:
+0) Where the bees start out in the game
+1) The entire space where the game takes place
+2) A single tile that an Ant can be placed on and that connects to
+   other Places
+3) The tunnel that bees travel through
+? 2
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 2 > Suite 1 > Case 2
+(cases remaining: 4)
+
+Q: p is a Place whose entrance is q and exit is r (q and r are not None). When is p.entrance first set to a non-None value?
+Choose the number of the correct choice:
+0) Never, it is always set to None
+1) When q is constructed
+2) When p is constructed
+? 1
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 2 > Suite 1 > Case 3
+(cases remaining: 3)
+
+Q: p is a Place whose entrance is q and exit is r (q and r are not None). When is p.exit first set to a non-None value?
+Choose the number of the correct choice:
+0) When q is constructed
+1) Never, it is always set to None
+2) When p is constructed
+? 2
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 2 > Suite 2 > Case 1
+(cases remaining: 2)
+
+>>> from ants import *
+>>> from ants_plans import *
+>>> #
+>>> # Create a test layout where the gamestate is a single row with 3 tiles
+>>> beehive, layout = Hive(make_test_assault_plan()), dry_layout
+>>> dimensions = (1, 3)
+>>> gamestate = GameState(None, beehive, ant_types(), layout, dimensions)
+>>> #
+>>> # Simple test for Place
+>>> place0 = Place('place_0')
+>>> print(place0.exit)
+? None
+-- OK! --
+
+>>> print(place0.entrance)
+? 'None'
+-- Not quite. Try again! --
+
+? None
+-- OK! --
+
+>>> place1 = Place('place_1', place0)
+>>> place1.exit is place0
+? True
+-- OK! --
+
+>>> place0.entrance is place1
+? False
+-- Not quite. Try again! --
+
+? True
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 2 > Suite 2 > Case 2
+(cases remaining: 1)
+
+-- Already unlocked --
+
+---------------------------------------------------------------------
+OK! All cases for Problem 2 unlocked.
+
+Backup... 100% complete
+Backup successful for user: bsidiq@berkeley.edu
+
+OK is up to date
+Fred@DESKTOP-1FTM5JI ~/OneDrive/Desktop/ants$ python ok -q 03 -u
+=====================================================================
+Assignment: Project 3: Ants Vs. SomeBees
+OK, version v1.18.1
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Unlocking tests
+
+At each "? ", type what you would expect the output to be.
+Type exit() to quit
+
+---------------------------------------------------------------------
+Problem 3 > Suite 1 > Case 1
+(cases remaining: 12)
+
+Q: What Bee should a ThrowerAnt throw at?
+Choose the number of the correct choice:
+0) The ThrowerAnt throws at a random Bee in its own Place
+1) The ThrowerAnt finds the nearest place behind its own place
+   that has Bees and throws at a random Bee in that place
+2) The ThrowerAnt finds the nearest place including and in front of its
+   own place that has Bees and throws at a random Bee in that place
+3) The ThrowerAnt finds the nearest place in either direction that has
+   Bees and throws at a random Bee in that place
+? 3
+-- Not quite. Try again! --
+
+Choose the number of the correct choice:
+0) The ThrowerAnt throws at a random Bee in its own Place
+1) The ThrowerAnt finds the nearest place behind its own place
+   that has Bees and throws at a random Bee in that place
+2) The ThrowerAnt finds the nearest place including and in front of its
+   own place that has Bees and throws at a random Bee in that place
+3) The ThrowerAnt finds the nearest place in either direction that has
+   Bees and throws at a random Bee in that place
+? 1
+-- Not quite. Try again! --
+
+Choose the number of the correct choice:
+0) The ThrowerAnt throws at a random Bee in its own Place
+1) The ThrowerAnt finds the nearest place behind its own place
+   that has Bees and throws at a random Bee in that place
+2) The ThrowerAnt finds the nearest place including and in front of its
+   own place that has Bees and throws at a random Bee in that place
+3) The ThrowerAnt finds the nearest place in either direction that has
+   Bees and throws at a random Bee in that place
+? 0
+-- Not quite. Try again! --
+
+Choose the number of the correct choice:
+0) The ThrowerAnt throws at a random Bee in its own Place
+1) The ThrowerAnt finds the nearest place behind its own place
+   that has Bees and throws at a random Bee in that place
+2) The ThrowerAnt finds the nearest place including and in front of its
+   own place that has Bees and throws at a random Bee in that place
+3) The ThrowerAnt finds the nearest place in either direction that has
+   Bees and throws at a random Bee in that place
+? 2
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 3 > Suite 1 > Case 2
+(cases remaining: 11)
+
+Q: How do you get the Place object in front of another Place object?
+Choose the number of the correct choice:
+0) Decrement the place by 1
+1) The place's exit instance attribute
+2) Increment the place by 1
+3) The place's entrance instance attribute
+? 1
+-- Not quite. Try again! --
+
+Choose the number of the correct choice:
+0) Decrement the place by 1
+1) The place's exit instance attribute
+2) Increment the place by 1
+3) The place's entrance instance attribute
+? 3
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 3 > Suite 1 > Case 3
+(cases remaining: 10)
+
+Q: What is the entrance of the first Place in a tunnel (i.e. where do the bees enter from)?
+Choose the number of the correct choice:
+0) None
+1) The Hive
+2) An empty Place
+? 31
+-- Not quite. Try again! --
+
+Choose the number of the correct choice:
+0) None
+1) The Hive
+2) An empty Place
+? 2
+-- Not quite. Try again! --
+
+Choose the number of the correct choice:
+0) None
+1) The Hive
+2) An empty Place
+? 0
+-- Not quite. Try again! --
+
+Choose the number of the correct choice:
+0) None
+1) The Hive
+2) An empty Place
+? 3
+-- Not quite. Try again! --
+
+Choose the number of the correct choice:
+0) None
+1) The Hive
+2) An empty Place
+? 2
+-- Not quite. Try again! --
+
+Choose the number of the correct choice:
+0) None
+1) The Hive
+2) An empty Place
+? 1
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 3 > Suite 1 > Case 4
+(cases remaining: 9)
+
+Q: How can you determine if a given Place is the Hive?
+Choose the number of the correct choice:
+0) by checking the bees attribute of the place instance
+1) by using the is_hive attribute of the place instance
+2) by checking the ant attribute of the place instance
+? 0
+-- Not quite. Try again! --
+
+Choose the number of the correct choice:
+0) by checking the bees attribute of the place instance
+1) by using the is_hive attribute of the place instance
+2) by checking the ant attribute of the place instance
+? 1
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 3 > Suite 1 > Case 5
+(cases remaining: 8)
+
+Q: What should nearest_bee return if there is no Bee in front of the ThrowerAnt in the tunnel?
+Choose the number of the correct choice:
+0) The closest Bee behind the ThrowerAnt
+1) A random Bee in the Hive
+2) None
+? 0
+-- Not quite. Try again! --
+
+Choose the number of the correct choice:
+0) The closest Bee behind the ThrowerAnt
+1) A random Bee in the Hive
+2) None
+? 1
+-- Not quite. Try again! --
+
+Choose the number of the correct choice:
+0) The closest Bee behind the ThrowerAnt
+1) A random Bee in the Hive
+2) None
+? 2
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 3 > Suite 2 > Case 1
+(cases remaining: 7)
+
+>>> from ants import *
+>>> beehive, layout = Hive(AssaultPlan()), dry_layout
+>>> dimensions = (1, 9)
+>>> gamestate = GameState(None, beehive, ant_types(), layout, dimensions)
+>>> thrower = ThrowerAnt()
+>>> ant_place = gamestate.places["tunnel_0_0"]
+>>> ant_place.add_insect(thrower)
+>>> #
+>>> # Testing nearest_bee
+>>> near_bee = Bee(2) # A Bee with 2 health
+>>> far_bee = Bee(3)  # A Bee with 3 health
+>>> hive_bee = Bee(4) # A Bee with 4 health
+>>> hive_place = gamestate.beehive
+>>> hive_place.is_hive # Check if this place is the Hive
+? True
+-- OK! --
+
+>>> hive_place.add_insect(hive_bee)
+>>> thrower.nearest_bee() is hive_bee # Bees in the Hive can never be attacked
+? False
+-- OK! --
+
+>>> near_place = gamestate.places['tunnel_0_3']
+>>> far_place = gamestate.places['tunnel_0_6']
+>>> near_place.is_hive # Check if this place is the Hive
+? True
+-- Not quite. Try again! --
+
+? False
+-- OK! --
+
+>>> near_place.add_insect(near_bee)
+>>> far_place.add_insect(far_bee)
+>>> nearest_bee = thrower.nearest_bee()
+>>> nearest_bee is far_bee
+? True
+-- Not quite. Try again! --
+
+? False
+-- OK! --
+
+>>> nearest_bee is near_bee
+? True
+-- OK! --
+
+>>> nearest_bee.health
+? 2
+-- OK! --
+
+>>> thrower.action(gamestate)    # Attack! ThrowerAnts do 1 damage
+>>> near_bee.health
+? 1
+-- OK! --
+
+>>> far_bee.health
+? 3
+-- OK! --
+
+>>> thrower.place is ant_place    # Don't change self.place!
+? True
+-- OK! --
+
+---------------------------------------------------------------------
+Problem 3 > Suite 2 > Case 2
+(cases remaining: 6)
+
+-- Already unlocked --
+
+---------------------------------------------------------------------
+Problem 3 > Suite 2 > Case 3
+(cases remaining: 5)
+
+-- Already unlocked --
+
+---------------------------------------------------------------------
+Problem 3 > Suite 2 > Case 4
+(cases remaining: 4)
+
+-- Already unlocked --
+
+---------------------------------------------------------------------
+Problem 3 > Suite 2 > Case 5
+(cases remaining: 3)
+
+-- Already unlocked --
+
+---------------------------------------------------------------------
+Problem 3 > Suite 2 > Case 6
+(cases remaining: 2)
+
+-- Already unlocked --
+
+---------------------------------------------------------------------
+Problem 3 > Suite 2 > Case 7
+(cases remaining: 1)
+
+-- Already unlocked --
+
+---------------------------------------------------------------------
+OK! All cases for Problem 3 unlocked.
+
+Backup... 100% complete
+Backup successful for user: bsidiq@berkeley.edu
+
+OK is up to date
+Fred@DESKTOP-1FTM5JI ~/OneDrive/Desktop/ants$ python ok --submit
+=====================================================================
+Assignment: Project 3: Ants Vs. SomeBees
+OK, version v1.18.1
+=====================================================================
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Running tests
+
+
+There are still locked tests! Use the -u option to unlock them
+---------------------------------------------------------------------
+Test summary
+    Locked: 5
+    31 test cases passed! No cases failed.
+
+Submit... 100% complete
+Submission successful for user: bsidiq@berkeley.edu
+URL: https://okpy.org/cal/cs61a/fa21/proj03/submissions/RLj6LR
+
+OK is up to date
+Fred@DESKTOP-1FTM5JI ~/OneDrive/Desktop/ants$
+

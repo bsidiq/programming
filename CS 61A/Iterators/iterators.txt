@@ -1,0 +1,242 @@
+#Iterator over container
+
+x = [1, 2, 3]
+t = iter(x)
+next(t)
+>>> 1
+next(t)
+>>> 2
+
+#Iterator over dictionary
+
+d = {'One':1, 'Two':2, 'Three':3}
+d['Zero'] = 0
+d
+{'One':1, 'Two':2, 'Three':3, 'Zero':0}
+k = iter(d.keys())
+next(k)
+One
+v = iter(d.values())
+next(v)
+1
+
+i = iter(d.items())
+next(i)
+('One', 1)
+
+#when the size of a dictionary changed,
+#it will not iterate anymore. it gives error
+
+#Iterator over for loop
+
+>>> r = range(3, 6)
+>>> list(r)
+[3, 4, 5]
+>>> for i in r:
+	print(i)
+
+3
+4
+5
+>>> ri = iter(r)
+>>> ri
+<range_iterator object at 0x00000216DCEAAC70>
+>>> next(ri)
+3
+>>> for i in ri:
+	print(i)
+
+4
+5
+#for loops will iterate from where the iterator is positioned
+
+#built-in iterator functions
+
+map(func, iterable): iterate over func(x) for x in iterable
+
+filter(func, iteratble): iterate over x in iteratble if func(x) return a True value
+
+zip(first_iter, second_iter): iterate over co-indexed (x, y) pairs
+
+reversed(sequence): iterate over x in a sequence in reverse order
+
+
+list(iterable): create a list containing all x in iterable
+
+tuple(iterable): create a tuple containing all x in iterable
+
+sorted(iterable): create a sorted list containing x in iterable
+
+Example: 
+
+>>> bcd = ['b', 'c', 'd']
+>>> [x.upper() for x in bcd]
+['B', 'C', 'D']
+>>> map(lambda x: x.upper(), bcd]
+  File <string>, line 1
+   
+>>> map(lambda x: x.upper(), bcd)
+<map object>
+>>> m = map(lambda x: x.upper(), bcd)
+>>> next(m)
+'B'
+>>> next(m)
+'C'
+>>> next(m)
+'D'
+>>>
+# using map and filter with condition
+
+def double(x): 
+    print('**', x, '=>', 2*x, '**')
+    return 2*x
+
+>>> m = map(double, range(3, 7))
+>>> f = lambda y: y >= 10
+>>> t = filter(f, m)
+>>> next(t)
+** 3 => 6 **
+** 4 => 8 **
+** 5 => 10 **
+10
+>>> next(t)
+** 6 => 12 **
+12
+>>> list(t)
+[]
+>>> list(filter(f, m))
+[]
+
+>>> list(filter(f, map(double, range(3, 7))))
+** 3 => 6 **
+** 4 => 8 **
+** 5 => 10 **
+** 6 => 12 **
+[10, 12]
+>>> list
+
+>>> x = list(filter(f, map(double, range(3, 7))))
+** 3 => 6 **
+** 4 => 8 **
+** 5 => 10 **
+** 6 => 12 **
+>>> x
+[10, 12]
+>>> 
+
+#Using Zip function to get values and keys of a dictionary
+
+
+>>> t = [1, 2, 3, 2, 1]
+>>> list(reversed(t)) == t
+True
+>>> 'Using zip function'
+'Using zip function'
+>>> d = {'a': 1, 'b': 2}
+>>> d
+{'a': 1, 'b': 2}
+
+
+>>> items = iter(d.items())
+>>> next(items)
+('a', 1)
+>>> next(items)
+('b', 2)
+>>> items = zip(d.keys(), d.values())
+>>> next(items)
+('a', 1)
+>>> next(items)
+('b', 2)
+>>>
+
+def palindrome(s):
+    #return list(s) == list(reversed(s))
+    return all([a == b for a, b in zip(s, reversed(s))])
+
+
+>>> s = [1, 2, 3]
+>>> palindrome(s)
+False
+>>> s = [1, 2, 1]
+>>> palindrome(s)
+True
+>>> 
+-------------------------------------------------
+Blackjack game:
+
+import random
+points = {'J': 10, 'Q': 10, 'K':10, 'A':1}
+
+def hand_score(hand):
+    """Total score for a hand.
+    >>> hand_score(['A', 3, 6])
+    20
+    >>> hand_score(['A', 'J', 'A'])
+    12
+    """
+    total = sum([points.get(card, card) for card in hand])
+    if total <= 11 and 'A' in hand:
+        return total + 10
+    return total
+    
+def shuffle_cards():
+    deck = (['J', 'Q', 'K', 'A'] + list(range(2, 11))) * 4
+    random.shuffle(deck)
+    return iter(deck) # won't repeat card
+
+def player_turn(up_card, cards, strategy, deck):
+    while hand_score(cards) <= 21 and strategy(up_card, cards):
+        # strategy(x,y) returns iether ture or false
+        cards.append(next(deck))
+
+def dealer_turn(cards, deck):
+    while hand_score(cards) <= 17:
+        cards.append(next(deck))
+
+def blackjack(strategy, announce=print):
+    """Play a hand of casino blackjack."""
+    deck = shuffle_cards()
+    
+    player_cards = [next(deck)] # A player card is the card whatever starts 
+                                # with the deck that's next
+    up_card = next(deck) # dealer's up card; whatever comes after the player's card
+    player_cards.append(next(deck)) # Player gets another card
+    hole_card = next(deck) # the dealer's hiden card, not shown to the player
+    
+    player_turn(up_card, player_cards, strategy, deck)
+    # hole_card: we don't want the player know the dealer's second card
+    if hand_score(player_cards) > 21:
+        announce('Player goes bust with', player_cards,
+                 'against a', up_card)
+        return -1
+        
+    dealer_cards = [up_card, hole_card]
+    dealer_turn(dealer_cards, deck)
+    if hand_score(dealer_cards) > 21:
+        announce('Dealer bust with', dealer_cards)
+        return 1
+    else: 
+        announce('Player', hand_score(player_cards), 'and dealer has', hand_score(dealer_cards))
+        diff = hand_score(player_cards)-hand_score(dealer_cards)
+        return max(-1, min(1, diff))
+def basic_strategy(up_card, cards):
+    if hand_score(cards) <= 11:
+        return True
+    if up_card in [2, 3, 4, 5, 6]:
+        return False
+    return hand_score(cards) < 17
+
+def shhh(*args):
+    "Don't print (or do anything else."
+
+def gamble(strategy, hand=1000):
+    return sum([blackjack(strategy, shhh) for _ in range(hand)])
+    
+        
+        
+        
+        
+    
+        
+        
+    

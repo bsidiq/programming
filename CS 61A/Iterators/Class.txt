@@ -1,0 +1,444 @@
+Object Oriented Programming: 
+ - A method for organizing modular programs
+   	- define each peice without worrying about the other pieces
+	  they all work together
+	- this means we should worry about abstraction barriers
+	- bundling together information and related behavior
+ - A class has a metaphor ofr computation using ditributed state
+	- each object has its own local state
+	- each object also knows how to manage its own local state, based on method calls
+	- method calls are messages passed between objects. 
+	- Several objects may all be instances of a common type
+	- Different types may relate to each other. 
+
+When a class is called: 
+1. A new instance oa that class is created
+2. the __init__ method of the class is called with the new object as its first
+   arguement (named self), along with any aditional arguements provided
+   in the call expression. like ('Jim') passed as an arguement through a call
+   expression. 
+3. __init__ is a constructor. __init__ is special because whenever the class
+   is called, __init__ is called automatically. 
+
+Object Identity: 
+
+>>> a = Account('Jim')
+>>> b = Account('Jack')
+
+"a" and "b" are bounded to a different account. 
+
+I dentity operators "is" and "is not" test if two expression evaluate 
+to the same object: 
+
+>>> a is a
+True
+>>> a is not b
+True
+>>> a is b
+False
+
+Methodes: 
+methods are defined in the suite of a class statement
+
+for instance: 
+class Account:
+	def __init__(self, account_holder) # is method
+
+"self" is an object that's passed as an arguement to different 
+methods. 
+
+for instance: 
+	def deposit(self, amount)
+
+
+Dot notation automatically supplies the first arguement to a method. 
+for instance: 
+
+>>> tom_account = Account('Tom')
+>>> tom_account.deposit(100)
+100 
+
+In here there are two arguements that's passed in to "deposit" func. 
+first, "tom_account" through "dot", and second (100) the amount. 
+
+"dot" operator is a compound expression 
+
+
+Atributes: 
+We can use "dot" expression or getattr() built-in function
+
+>>> getattr(tom_account, 'balance')
+100
+>>> hasattr(tom_account, 'deposit')
+True
+
+
+Methods and Functions
+
+-Functions, which we have been creating since the beginning of
+the course, and
+-Bound methods, which couple together a function and the object 
+on which that method will be invoked
+
+for instance: 
+			object + function = Bound Method
+
+>>> type(Account.deposit)
+,class 'function'>
+>>> type(tom_account.deposit)
+<class 'method'>
+
+
+A method is different with a function: 
+
+
+>>> tom_account = Account('Tom')
+>>> Account.deposit(tom_account, 10000) #this is a function call
+10000
+
+
+>>> tom_account.deposit(200000) #this is method
+210000
+
+
+Class Attributes: 
+- class attributes are shared accross all instances of a class
+  because they are attributes of the class, not the instance. 
+
+for instance: 
+
+	class Account: 
+		interest = 0.02 # A class attribute will be shared across the class
+
+
+
+
+
+Example: 
+>>> a = Account('Jim')
+>>> a.holder # this an attribute of the "Account"
+'Jim'
+Expression: I am creating an account, and I am passing the account holder 'Jim'
+	    , I am binding the resulting object, which is an instance of 
+	    of "Account" class, to the name "a"
+
+Once the name "a" is binded to the class "Account." I can use 
+any attributes belong to the class
+
+
+
+
+class Account:
+    def __init__(self, account_holder):
+        self.balance = 0 
+        self.holder = account_holder
+
+
+
+>>> a = Account('K')
+>>> a.holder
+'K'
+>>> a.balance
+0
+>>> b = account('spack')
+Traceback (most recent call last):
+  File <string>, line 1, in <module>
+NameError: name 'account' is not defined
+>>> b = Account('Spack')
+>>> b.balance = 200
+>>> [acc.balance for acc in (a, b)]
+[0, 200]
+>>> [a.balance for a in (a, b)]
+[0, 200]
+>>> [a.balance for a in (c, d)]
+Traceback (most recent call last):
+  File <string>, line 1, in <module>
+NameError: name 'c' is not defined
+>>> [a.balance for a in (a, d)]
+Traceback (most recent call last):
+  File <string>, line 1, in <module>
+NameError: name 'd' is not defined
+>>> [a.balance for a in (a, a)]
+[0, 0]
+>>> [a.balance for a in (b, b)]
+[200, 200]
+>>> c = Account('Basir')
+>>> c.balance = 1000
+>>> [d.balance for d in (a, b, c)]
+[0, 200, 1000]
+>>> [b.holder for b in (a, b, c)]
+['K', 'Spack', 'Basir']
+>>> 
+
+
+Func:
+class Account:
+    def __init__(self, account_holder):
+        self.balance = 0 
+        self.holder = account_holder
+    
+    def deposit(self, amount):
+        self.balance += amount
+        return self.balance
+    
+    def withdraw(self, amount):
+        if amount > self.balance:
+            return 'Insuficient funds'
+        self.balance -= amount
+        return self.balance
+End Func: 
+
+
+>>> b_a = Account('B')
+>>> b_a.balance
+0
+>>> b_a.withdraw(1)
+'Insuficient funds'
+>>> b_a.deposit(1000)
+1000
+>>> b_a.withdraw(10)
+990
+>>> getattr(b_a, 'balance')
+990
+>>> getattr(b_a, 'holder')
+'B'
+>>> # the built-in get attribute function (getattr(x, y)) also returns an attribute for an object by name. it's the function equivalent of dot notation 
+>>> # for instance: 
+
+>>> b_a.balance
+990
+
+>>> getattr(b_a, 'balance')
+990
+>>> 
+
+>>> # Methonds and Functions: 
+>>> type(Account.deposit)
+<class 'function'>
+>>> type(b_a.deposit)
+Traceback (most recent call last):
+  File <string>, line 1, in <module>
+NameError: name 'b_a' is not defined
+>>> b_a = Account('B')
+>>> type(b_a.deposit)
+<class 'method'>
+>>> # Thus, deposit is a function, but using an expression (b_a) with a function is a method. 
+>>> # these two are similar: 
+>>> Account.deposit(b_a, 990)
+990
+>>> b_a.deposit(10)
+1000
+>>> # the deposite FUNCTION takes two argument
+>>> # the deposit METHOD takes one arguement
+>>> # the function get attribute (getattr(x, y)) behaves exactly like the DOT notation or it's bound to a METHOD value. 
+>>>
+
+
+>>> #Class Attributes: 
+>>> #class attributes can be called class variables and or 
+static variables
+>>> #Example: 
+>>> #For instance, let us say that a bank pays 
+interest on the balance of accounts at a fixed interest rate
+
+class Account:
+    interest = 0.02 # A class attribute
+    def __init__(self, account_holder):
+        self.balance = 0 
+        self.holder = account_holder
+
+
+>>> b_a = Account('B')
+>>> b_a.interest
+0.02
+>>> h_a = Account('H')
+>>> h_a.interest
+0.02
+>>> #However, a single assignment statement to a class attribute changes the value of the attribute for all instances of the class.
+>>> #for instance: 
+>>> Account.interest = 0.05
+>>> b_a.interest
+0.05
+>>> h_a.interest
+0.05
+>>> 
+>>> #However, if assign to the name attributes interest of an account instance, we create a new instance attribute that has the same name as the existing calss attribute
+>>> # for instance: 
+>>> b_a.interest(0.09)
+Traceback (most recent call last):
+  File <string>, line 1, in <module>
+TypeError: 'float' object is not callable
+>>> b_a.interest = 0.09
+>>> b_a.interest
+0.09
+>>> h_a.interest = 0.08
+>>> h_a.interest
+0.08
+>>> # but changes to the class attribute interest will not affect b_a and h_a
+>>> Account.interest = 1.0
+>>> Account.interest
+1.0
+>>> b_a.interest
+0.09
+>>> h_a.interest
+0.08
+
+
+ #Inheritance:
+>>> #Two classes may have similar attributes, but one 
+represents a special case of the other
+
+>>> # for instance, we want to implment a chekcing account, 
+which is different from a standard account. A chcking account 
+charges an extra $1 for each withdrawal and has a lower interst
+ rate. 
+New_FUNC: 
+class Account:
+    interest = 0.02 # A class attribute
+    def __init__(self, account_holder):
+        self.balance = 0 
+        self.holder = account_holder
+    
+    def deposit(self, amount):
+        self.balance += amount
+        return self.balance
+    
+    def withdraw(self, amount):
+        if amount > self.balance:
+            return 'Insuficient funds'
+        self.balance -= amount
+        return self.balance
+        
+class CheckingAccount(Account):
+    """A bank account that charges for withdrawals."""
+    withdraw_charge = 1
+    interest = 0.01
+    def withdraw(self, amount):
+            return Account.withdraw(self, (amount + self.withdraw_charge))
+END_new_FUNC
+
+
+>>> checking = CheckingAccount('B')
+>>> checking.interest
+0.01
+
+>>> checking.deposit(20)
+20
+
+>>> checking.withdraw(5)
+14
+
+>>> #Because it's a checking account, one dollor is diducted as withdrawal fee
+>>> # In the above functions, CheckingAccount is a specialization of an Account. the generic account(Account) will serve as the base class of CheckingAccount and CheckingAccount will be subclass of Account
+>>> # Parant class: Account
+>>> #Child Class: CheckingAccount
+>>> 
+>>> # A child class inherits the attributes of its base (parent) class, but may override certain attributes, including certiaing methods. 
+>>> # with inheritance, we only specify what is different between the subclass (child) and the base class(parent). Anything unspecified in the subclass (child) is automatically assumed to behave just as it would for the base class. 
+>>> # A checking account is a specific type of account, so having a Checking Account inherit from Account is an appropriate use of inheritance.
+
+
+
+ #How to track classes: 
+>>> [c.__name__ for c in AsSeenOnTVAccount.mro()]
+['AsSeenOnTVAccount', 'CheckingAccount', 'SavingsAccount', 'Account', 'object']
+>>> # python resolves from left to right and from bothom to top!
+
+
+> #The role of Objects
+>>> #Python object system is designed to make data abstraction and message passsing both convenient and flexible. 
+>>> #the speecilization is to improve ability to organize large programs
+
+
+
+
+>>> # Implementing Classes and Objects
+>>> #Classes and Objects can themselves be represented using just functions and dictionaries. 
+>>> #The pupose of implementing an object system in this way is to illustrate that using object system in this way does require a spceial programming language. 
+>>> # in order to implement object we don't use dot notation, instaad we use dectionaries. 
+>>> 
+>>> 
+>>> 
+>>> #Instances
+>>> #An instance has named attributes, such as the balance of an account, which can be set and tetrieved. . 
+>>> # using a dispactch dectionary, we implement instance
+
+
+FUNC:
+def make_class(attributes, base_class=None):
+        """Return a new class, which is a dispatch dictionary."""
+        def get_value(name):
+            if name in attributes:
+                return attributes[name]
+            elif base_class is not None:
+                return base_class['get'](name)
+        def set_value(name, value):
+            attributes[name] = value
+        def new(*args):
+            return init_instance(cls, *args)
+        cls = {'get': get_value, 'set': set_value, 'new': new}
+        return cls
+
+def init_instance(cls, *args):
+        """Return a new object with type cls, initialized with args."""
+        instance = make_instance(cls)
+        init = cls['get']('__init__')
+        if init:
+            init(instance, *args)
+        return instance
+def make_instance(cls):
+        """Return a new object instance, which is a dispatch dictionary."""
+        def get_value(name):
+            if name in attributes:
+                return attributes[name]
+            else:
+                value = cls['get'](name)
+                return bind_method(value, instance)
+        def set_value(name, value):
+            attributes[name] = value
+        attributes = {}
+        instance = {'get': get_value, 'set': set_value}
+        return instance
+        
+def bind_method(value, instance):
+        """Return a bound method if value is callable, or value otherwise."""
+        if callable(value):
+            def method(*args):
+                return value(instance, *args)
+            return method
+        else:
+            return value
+
+def make_account_class():
+        """Return the Account class, which has deposit and withdraw methods."""
+        interest = 0.02
+        def __init__(self, account_holder):
+            self['set']('holder', account_holder)
+            self['set']('balance', 0)
+        def deposit(self, amount):
+            """Increase the account balance by amount and return the new balance."""
+            new_balance = self['get']('balance') + amount
+            self['set']('balance', new_balance)
+            return self['get']('balance')
+        def withdraw(self, amount):
+            """Decrease the account balance by amount and return the new balance."""
+            balance = self['get']('balance')
+            if amount > balance:
+                return 'Insufficient funds'
+            self['set']('balance', balance - amount)
+            return self['get']('balance')
+        return make_class(locals())
+END_FUNC
+
+
+>>> account = make_account_class()
+>>> b_a = account['new']('Basir')
+>>> b_a['get']('holder')
+'Basir'
+>>> b_a['set']('interest', 0.04)
+>>> b_a['get']('interest')
+0.04
+>>> account['get']('interest')
+0.02
+
+
